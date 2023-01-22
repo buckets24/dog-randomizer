@@ -1,5 +1,5 @@
-import styles from "./styles.module.css"
 import { FC, InputHTMLAttributes } from "react"
+import styles from "./styles.module.css"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string
@@ -16,7 +16,6 @@ const FormInput: FC<Props> = ({ label, ...props }) => {
         {label}
       </span>
       <input
-        className={styles.input}
         {...props}
       />
     </div>
@@ -24,5 +23,5 @@ const FormInput: FC<Props> = ({ label, ...props }) => {
 }
 
 export {
-  FormInput
+FormInput
 }

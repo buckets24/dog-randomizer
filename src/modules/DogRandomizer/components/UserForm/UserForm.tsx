@@ -34,9 +34,18 @@ const UserForm = () => {
     setFormValues({ [name]: value })
   }
 
-  const handleEmailValidate = () => {
-    validateEmail(formValues?.userEmail)
+  const handleEmailValidate = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value, `event`)
+    if (!event.target.value) {
+      return null
+    }
+
+    return validateEmail(formValues?.userEmail)
       .then((data) => setIsValidEmail(data?.isValid))
+  }
+
+  const handleResetEmail = () => {
+    setIsValidEmail(true)
   }
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -46,19 +55,24 @@ const UserForm = () => {
 
   return (
     <div>
-      <div className={styles.error}>
-        {isValidEmail ? "" : "Email is invalid."}
-      </div>
       <form onSubmit={handleFormSubmit}>
         <div className={styles.container}>
-          <FormInput
-            name="userEmail"
-            label="Email Address"
-            type="text"
-            value={formValues?.userEmail}
-            onChange={handleFormChange}
-            onBlur={handleEmailValidate}
-          />
+          <div>
+            <FormInput
+              name="userEmail"
+              label="Email Address"
+              type="text"
+              value={formValues?.userEmail}
+              onChange={handleFormChange}
+              onBlur={handleEmailValidate}
+              onFocus={handleResetEmail}
+              className={!isValidEmail ? styles.errorInput : ""}
+            />
+            {!isValidEmail ?
+              <div className={styles.error}>
+                {"Email is invalid."}
+              </div> : null}
+          </div>
           <FormInput
             name="userName"
             label="Name"
