@@ -19,6 +19,6 @@ input {
   padding: 0 1rem;
 }
 
-.input:focus-visible {
+input:focus-visible {
   border: 2px solid rgba(0,0,0,0.5);
 }
