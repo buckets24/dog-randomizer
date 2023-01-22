@@ -1,0 +1,20 @@
+.dogDisplayContainer {
+  border: 2px solid #CCCCCC;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.title {
+  text-transform: capitalize;
+}
+
+.titleContainer {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+}

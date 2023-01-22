@@ -1,0 +1,21 @@
+.btnDefault {
+  outline: none;
+  border: 2px solid #CCCCCC;
+  border-radius: 8px;
+  height: 40px;
+  width: 100%;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(37, 62, 102, 1);
+  cursor: pointer;
+  transition: ease-in all 0.3s;
+}
+
+.btnDefault:hover {
+  background-color: rgba(37, 62, 102, 0.5);
+}
+
+.btnDefault:disabled {
+  background-color: rgba(37, 62, 102, 0.3);
+  cursor: not-allowed;
+}
