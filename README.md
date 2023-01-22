@@ -16,6 +16,8 @@ Run Dev server:  `npm run start` or `yarn start`
 
 Run Test suite:  `npm run test` or `yarn test`
 
+Email Validation API: create `env.local` in the root folder and add the `REACT_APP_EMAIL_API_KEY` with value of the `API_key` for testing purposes this can be used `48f83ab677ac40cdaf1a261f7ac5b23e`
+
 To visit the app in browser: `http://localhost:3000`
 
 ------
